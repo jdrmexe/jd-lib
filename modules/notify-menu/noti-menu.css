@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+/* ─── Panel root ─────────────────────────────────── */
+#jd-noti-menu {
+    position: fixed;
+    top: 50%;
+    right: -380px;
+    transform: translateY(-50%);
+    width: 340px;
+    pointer-events: none;
+    transition: right 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 9998;
+    font-family: 'Outfit', sans-serif;
+}
+
+#jd-noti-menu.open {
+    right: 24px;
+    pointer-events: all;
+}
+
+/* ─── Card shell ─────────────────────────────────── */
+.nm-card {
+    background: rgb(11, 11, 16);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* ─── Header ─────────────────────────────────────── */
+.nm-header {
+    padding: 14px 16px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nm-header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nm-logo {
+    width: 28px; height: 28px;
+    border-radius: 7px;
+    background: rgba(59, 130, 246, 0.12);
+    display: flex; align-items: center; justify-content: center;
+}
+
+.nm-logo svg {
+    width: 14px; height: 14px;
+    stroke: #60a5fa;
+    stroke-width: 2.3;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.nm-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #e8e8ee;
+    line-height: 1;
+}
+
+.nm-subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: rgba(140, 140, 160, 0.55);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+.nm-close {
+    width: 22px; height: 22px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.nm-close:hover { background: rgba(255, 255, 255, 0.1); }
+
+.nm-close svg {
+    width: 10px; height: 10px;
+    stroke: rgba(255, 255, 255, 0.4);
+    stroke-width: 2.5;
+    fill: none;
+    stroke-linecap: round;
+}
+
+/* ─── Body ───────────────────────────────────────── */
+.nm-body {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* ─── Notify row button ──────────────────────────── */
+.nm-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.02);
+    transition: background 0.14s, border-color 0.14s, transform 0.1s;
+    position: relative;
+    overflow: hidden;
+}
+
+.nm-btn::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 3px; height: 100%;
+    background: var(--c);
+    opacity: 0.7;
+    border-radius: 8px 0 0 8px;
+}
+
+.nm-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.09);
+    transform: translateX(-3px);
+}
+
+.nm-btn:active { transform: translateX(-1px) scale(0.99); }
+
+/* type tokens */
+.nm-btn.success { --c: #22c55e; --bg: rgba(22,  101, 52,  0.15); }
+.nm-btn.error   { --c: #f43f5e; --bg: rgba(159, 18,  57,  0.15); }
+.nm-btn.warning { --c: #f59e0b; --bg: rgba(120, 53,  15,  0.15); }
+.nm-btn.info    { --c: #3b82f6; --bg: rgba(30,  58,  138, 0.15); }
+.nm-btn.medical { --c: #16a34a; --bg: rgba(20,  83,  45,  0.20); }
+
+/* icon */
+.nm-icon {
+    flex-shrink: 0;
+    width: 30px; height: 30px;
+    border-radius: 7px;
+    background: var(--bg);
+    display: flex; align-items: center; justify-content: center;
+}
+
+.nm-icon svg {
+    width: 14px; height: 14px;
+    stroke: var(--c);
+    stroke-width: 2.3;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* text */
+.nm-btn-text { flex: 1; }
+
+.nm-btn-label {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #d8d8e0;
+    line-height: 1.2;
+}
+
+.nm-btn-desc {
+    font-size: 11px;
+    color: rgba(140, 140, 158, 0.65);
+    margin-top: 2px;
+}
+
+/* type badge */
+.nm-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--c);
+    opacity: 0.7;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--bg);
+    border: 1px solid var(--c);
+    border-opacity: 0.2;
+    flex-shrink: 0;
+}
+
+/* ─── Footer hint ────────────────────────────────── */
+.nm-footer {
+    padding: 8px 14px 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.nm-footer-key {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    color: rgba(140, 140, 160, 0.45);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 2px 7px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+}
+
+.nm-footer-sep {
+    font-size: 9.5px;
+    color: rgba(140, 140, 160, 0.25);
+}
