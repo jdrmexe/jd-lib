@@ -29,7 +29,7 @@ dependency {
 }
 ```
 
-** JD lib public exports**
+**JD lib public exports**
 
 ```
 **Use this for a success notification**
