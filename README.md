@@ -5,17 +5,16 @@ My custom-made library for notifications in FiveM, I am still adding to this pro
 
 These are the parameters for the script
 ```
-    lib.notify(options)
+lib.notify(options)
 
-    @param options.title       string    – Notification title
-    @param options.description string    – Body text (optional)
-    @param options.type        string    – 'success' | 'error' | 'warning' | 'info'
-    @param options.duration    number    – Duration in ms (default 4000)
-    @param options.position   string    – 'top-right'|'top-left'|'bottom-right'|'bottom-left' (default 'top-right')
+@param options.title       string    – Notification title
+@param options.description string    – Body text (optional)
+@param options.type        string    – 'success' | 'error' | 'warning' | 'info'
+@param options.duration    number    – Duration in ms (default 4000)
+@param options.position   string    – 'top-right'|'top-left'|'bottom-right'|'bottom-left' (default 'top-right')
 
-    Example:
-        lib.notify({ title = 'Saved', description = 'Data was saved.', type = 'success' })
-
+Example:
+lib.notify({ title = 'Saved', description = 'Data was saved.', type = 'success' })
 ```
 
 **JD lib Notification Useage**
