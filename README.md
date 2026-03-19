@@ -3,7 +3,7 @@ My custom-made library for notifications in FiveM, I am still adding to this pro
 
 ## **Open Source, but do not re-publish or sell**
 
-These are the parameters for the script for external usage
+These are the parameters for the script
 ```
 --[[
     lib.notify(options)
@@ -19,40 +19,38 @@ These are the parameters for the script for external usage
 ]]
 ```
 
-**Fxmanifest Example for external scripts**
-``` 
-fx_version 'cerulean'
-game { 'gta5' }
-
-dependency {
-'jd-lib'
-}
-```
-
-**JD lib public exports**
+**JD lib Notification Useage**
 
 ```
 **Use this for a success notification**
-exports['jd_lib']:notify({
-    title = 'Wanted Level Cleared', 
-    type  = 'success',
+lib.notify({
+    title       = 'You Died',
+    description = 'Killed by ' .. cachedKiller.name .. ' (ID: ' .. cachedKiller.id .. ').',
+    type        = 'success',
+    duration    = 6000,
 })
 
 **Use this for a error notification**
-exports['jd_lib']:notify({
-    title = 'Wanted Level Cleared', 
-    type  = 'error',
+lib.notify({
+    title       = 'You Died',
+    description = 'Killed by ' .. cachedKiller.name .. ' (ID: ' .. cachedKiller.id .. ').',
+    type        = 'error',
+    duration    = 6000,
 })
 
 **Use this for a warning notification**
-exports['jd_lib']:notify({
-    title = 'Wanted Level Cleared', 
-    type  = 'warning',
+lib.notify({
+    title       = 'You Died',
+    description = 'Killed by ' .. cachedKiller.name .. ' (ID: ' .. cachedKiller.id .. ').',
+    type        = 'warning',
+    duration    = 6000,
 })
 
 **Use this for a info notification**
-exports['jd_lib']:notify({
-    title = 'Wanted Level Cleared', 
-    type  = 'info',
+lib.notify({
+    title       = 'You Died',
+    description = 'Killed by ' .. cachedKiller.name .. ' (ID: ' .. cachedKiller.id .. ').',
+    type        = 'info',
+    duration    = 6000,
 })
 ```
