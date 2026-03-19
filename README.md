@@ -5,7 +5,6 @@ My custom-made library for notifications in FiveM, I am still adding to this pro
 
 These are the parameters for the script
 ```
---[[
     lib.notify(options)
 
     @param options.title       string    – Notification title
@@ -16,7 +15,7 @@ These are the parameters for the script
 
     Example:
         lib.notify({ title = 'Saved', description = 'Data was saved.', type = 'success' })
-]]
+
 ```
 
 **JD lib Notification Useage**
