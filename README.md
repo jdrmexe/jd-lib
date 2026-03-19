@@ -22,7 +22,8 @@ These are the parameters for the script
 **JD lib Notification Useage**
 
 ```
-**Use this for a success notification**
+Use this for a success notification
+
 lib.notify({
     title       = 'You Died',
     description = 'Killed by ' .. cachedKiller.name .. ' (ID: ' .. cachedKiller.id .. ').',
@@ -30,7 +31,8 @@ lib.notify({
     duration    = 6000,
 })
 
-**Use this for a error notification**
+Use this for a error notification
+
 lib.notify({
     title       = 'You Died',
     description = 'Killed by ' .. cachedKiller.name .. ' (ID: ' .. cachedKiller.id .. ').',
@@ -38,7 +40,8 @@ lib.notify({
     duration    = 6000,
 })
 
-**Use this for a warning notification**
+Use this for a warning notification
+
 lib.notify({
     title       = 'You Died',
     description = 'Killed by ' .. cachedKiller.name .. ' (ID: ' .. cachedKiller.id .. ').',
@@ -46,7 +49,8 @@ lib.notify({
     duration    = 6000,
 })
 
-**Use this for a info notification**
+Use this for a info notification
+
 lib.notify({
     title       = 'You Died',
     description = 'Killed by ' .. cachedKiller.name .. ' (ID: ' .. cachedKiller.id .. ').',
