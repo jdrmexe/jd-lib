@@ -24,7 +24,7 @@ Use this for a success notification
 
 lib.notify({
     title       = 'You Died',
-    description = 'Killed by ' .. cachedKiller.name .. ' (ID: ' .. cachedKiller.id .. ').',
+    description = '',
     type        = 'success',
     duration    = 6000,
 })
@@ -33,7 +33,7 @@ Use this for a error notification
 
 lib.notify({
     title       = 'You Died',
-    description = 'Killed by ' .. cachedKiller.name .. ' (ID: ' .. cachedKiller.id .. ').',
+    description = '',
     type        = 'error',
     duration    = 6000,
 })
@@ -42,7 +42,7 @@ Use this for a warning notification
 
 lib.notify({
     title       = 'You Died',
-    description = 'Killed by ' .. cachedKiller.name .. ' (ID: ' .. cachedKiller.id .. ').',
+    description = '',
     type        = 'warning',
     duration    = 6000,
 })
@@ -51,7 +51,7 @@ Use this for a info notification
 
 lib.notify({
     title       = 'You Died',
-    description = 'Killed by ' .. cachedKiller.name .. ' (ID: ' .. cachedKiller.id .. ').',
+    description = '',
     type        = 'info',
     duration    = 6000,
 })
