@@ -23,8 +23,8 @@ lib.notify({ title = 'Saved', description = 'Data was saved.', type = 'success' 
 Use this for a success notification
 
 lib.notify({
-    title       = 'You Died',
-    description = '',
+    title       = 'TITLE',
+    description = 'DESCRIPTION',
     type        = 'success',
     duration    = 6000,
 })
@@ -32,8 +32,8 @@ lib.notify({
 Use this for a error notification
 
 lib.notify({
-    title       = 'You Died',
-    description = '',
+    title       = 'TITLE',
+    description = 'DESCRIPTION',
     type        = 'error',
     duration    = 6000,
 })
@@ -41,8 +41,8 @@ lib.notify({
 Use this for a warning notification
 
 lib.notify({
-    title       = 'You Died',
-    description = '',
+    title       = 'TITLE',
+    description = 'DESCRIPTION',
     type        = 'warning',
     duration    = 6000,
 })
@@ -50,8 +50,8 @@ lib.notify({
 Use this for a info notification
 
 lib.notify({
-    title       = 'You Died',
-    description = '',
+    title       = 'TITLE',
+    description = 'DESCRIPTION',
     type        = 'info',
     duration    = 6000,
 })
