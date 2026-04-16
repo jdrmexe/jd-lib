@@ -16,6 +16,7 @@ dependencies {
 FiveM will ensure `jd_lib` starts before your resource.
 
 ### 2. Import the lib table at the top of your client script
+
 ```lua
 local lib = exports['jd_lib']:getLib()
 ```
