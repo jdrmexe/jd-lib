@@ -34,3 +34,12 @@ function lib.notify(options)
         position    = options.position or 'top-right',
     })
 end
+
+-- ────────────────────────────────────────────────────────────────
+-- Export entry-point
+-- Other resources retrieve the lib table with:
+--   local lib = exports['jd_lib']:getLib()
+-- ────────────────────────────────────────────────────────────────
+function getLib()
+    return lib
+end

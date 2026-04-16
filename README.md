@@ -1,66 +1,64 @@
 # JD Lib
-My custom-made library for notifications in FiveM, I am still adding to this project, so don't expect alot at the moment.
+My custom-made library for notifications in FiveM, I am still adding to this project, so don't expect a lot at the moment.
 
 ## **Open Source, but do not re-publish or sell**
 
-Main Export
+---
+
+## Using jd_lib as a Dependency
+
+### 1. Declare the dependency in your resource's `fxmanifest.lua`
+```lua
+dependencies {
+    'jd_lib',
+}
 ```
+FiveM will ensure `jd_lib` starts before your resource.
+
+### 2. Import the lib table at the top of your client script
+```lua
 local lib = exports['jd_lib']:getLib()
-
-lib.notify({ title = 'Hello!', type = 'success' })
-
 ```
 
-These are the parameters for the script
+### 3. Use it
+```lua
+lib.notify({
+    title       = 'Hello',
+    description = 'jd_lib is working!',
+    type        = 'success',
+    duration    = 4000,
+})
+```
+
+---
+
+## Notification Parameters
+
 ```
 lib.notify(options)
 
-@param options.title       string    – Notification title
-@param options.description string    – Body text (optional)
-@param options.type        string    – 'success' | 'error' | 'warning' | 'info'
-@param options.duration    number    – Duration in ms (default 4000)
-@param options.position   string    – 'top-right'|'top-left'|'bottom-right'|'bottom-left' (default 'top-right')
+@param options.title       string  – Notification title
+@param options.description string  – Body text (optional)
+@param options.type        string  – 'success' | 'error' | 'warning' | 'info'
+@param options.duration    number  – Duration in ms (default 4000)
+@param options.position    string  – 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' (default 'top-right')
+```
 
-Example:
+### Examples
+
+```lua
+-- Success
 lib.notify({ title = 'Saved', description = 'Data was saved.', type = 'success' })
+
+-- Error
+lib.notify({ title = 'Failed', description = 'Something went wrong.', type = 'error', duration = 5000 })
+
+-- Warning
+lib.notify({ title = 'Caution', description = 'Irreversible action.', type = 'warning' })
+
+-- Info
+lib.notify({ title = 'FYI', description = 'jd_lib is active.', type = 'info' })
 ```
 
-**JD lib Notification Useage**
-
-```
-Use this for a success notification
-
-lib.notify({
-    title       = 'TITLE',
-    description = 'DESCRIPTION',
-    type        = 'success',
-    duration    = 6000,
-})
-
-Use this for a error notification
-
-lib.notify({
-    title       = 'TITLE',
-    description = 'DESCRIPTION',
-    type        = 'error',
-    duration    = 6000,
-})
-
-Use this for a warning notification
-
-lib.notify({
-    title       = 'TITLE',
-    description = 'DESCRIPTION',
-    type        = 'warning',
-    duration    = 6000,
-})
-
-Use this for a info notification
-
-lib.notify({
-    title       = 'TITLE',
-    description = 'DESCRIPTION',
-    type        = 'info',
-    duration    = 6000,
-})
-```
+---
+v1.0 — 19/02/2026 (release date)
