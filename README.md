@@ -61,5 +61,12 @@ lib.notify({ title = 'Caution', description = 'Irreversible action.', type = 'wa
 lib.notify({ title = 'FYI', description = 'jd_lib is active.', type = 'info' })
 ```
 
+### New possitions available for the notifications (add to bottom of you notify under duration in the provided format)
+```lua
+possition = top-left,
+possition = top-right, (deafult)
+possition = top-center,
+```
+
 ---
-v1.0 — 19/02/2026 (release date)
+v1.1 — 17/04/2026 (release date)
