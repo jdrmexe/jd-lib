@@ -49,16 +49,17 @@ lib.notify(options)
 
 ```lua
 -- Success
-lib.notify({ title = 'Saved', description = 'Data was saved.', type = 'success' })
+lib.notify({ title = 'Saved', description = 'Data was saved.', type = 'success', position = 'top-center' })
+
 
 -- Error
-lib.notify({ title = 'Failed', description = 'Something went wrong.', type = 'error', duration = 5000 })
+lib.notify({ title = 'Saved', description = 'Data was saved.', type = 'error', position = 'top-center' })
 
 -- Warning
-lib.notify({ title = 'Caution', description = 'Irreversible action.', type = 'warning' })
+lib.notify({ title = 'Saved', description = 'Data was saved.', type = 'warning', position = 'top-center' })
 
 -- Info
-lib.notify({ title = 'FYI', description = 'jd_lib is active.', type = 'info' })
+lib.notify({ title = 'Saved', description = 'Data was saved.', type = 'info', position = 'top-center' })
 ```
 
 ### New possitions available for the notifications (add to bottom of you notify under duration in the provided format)
