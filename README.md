@@ -3,6 +3,14 @@ My custom-made library for notifications in FiveM, I am still adding to this pro
 
 ## **Open Source, but do not re-publish or sell**
 
+Main Export
+```
+local lib = exports['jd_lib']:getLib()
+
+lib.notify({ title = 'Hello!', type = 'success' })
+
+```
+
 These are the parameters for the script
 ```
 lib.notify(options)
