@@ -14,10 +14,11 @@ lib = {}
     @param options.description string    – Body text (optional)
     @param options.type        string    – 'success' | 'error' | 'warning' | 'info'
     @param options.duration    number    – Duration in ms (default 4000)
-    @param options.position   string    – 'top-right'|'top-left'|'bottom-right'|'bottom-left' (default 'top-right')
+    @param options.position   string    – 'top-right'|'top-left'|'top-center'|'bottom-right'|'bottom-left' (default 'top-right')
 
     Example:
         lib.notify({ title = 'Saved', description = 'Data was saved.', type = 'success' })
+        lib.notify({ title = 'Alert', type = 'warning', position = 'top-center' })
 ]]
 function lib.notify(options)
     -- validate

@@ -9,5 +9,6 @@ AddEventHandler('jd_lib:playerJoined', function(name)
         description = name .. ' has joined the server.',
         type        = 'success',
         duration    = 5000,
+        position = 'top-center',
     })
 end)

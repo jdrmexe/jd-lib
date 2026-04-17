@@ -37,6 +37,7 @@ html, body {
 
 .jd-stack.top-right    { top: 20px;    right: 20px;  }
 .jd-stack.top-left     { top: 20px;    left: 20px;   }
+.jd-stack.top-center   { top: 20px;    left: 50%;    transform: translateX(-50%); }
 .jd-stack.bottom-right { bottom: 20px; right: 20px;  flex-direction: column-reverse; }
 .jd-stack.bottom-left  { bottom: 20px; left: 20px;   flex-direction: column-reverse; }
 
@@ -137,6 +138,16 @@ html, body {
 @keyframes jdIn {
     0%   { opacity: 0; transform: translateX(22px) scale(0.97); }
     100% { opacity: 1; transform: translateX(0)    scale(1);    }
+}
+
+@keyframes jdInTop {
+    0%   { opacity: 0; transform: translateY(-14px) scale(0.97); }
+    100% { opacity: 1; transform: translateY(0)     scale(1);    }
+}
+
+/* Apply drop-in animation for center stack */
+.jd-stack.top-center .jd-toast {
+    animation-name: jdInTop;
 }
 
 @keyframes jdOut {

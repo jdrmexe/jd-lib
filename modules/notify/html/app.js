@@ -9,7 +9,7 @@ const ICONS = {
 }
 
 const VALID_TYPES     = ['success', 'error', 'warning', 'info', 'medical']
-const VALID_POSITIONS = ['top-right', 'top-left', 'bottom-right', 'bottom-left']
+const VALID_POSITIONS = ['top-right', 'top-left', 'top-center', 'bottom-right', 'bottom-left']
 
 const root   = document.getElementById('jd-notify-root')
 const stacks = {}
