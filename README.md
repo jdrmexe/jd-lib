@@ -64,9 +64,9 @@ lib.notify({ title = 'Saved', description = 'Data was saved.', type = 'info', po
 
 ### New possitions available for the notifications (add to bottom of you notify under duration in the provided format)
 ```lua
-possition = top-left,
-possition = top-right, (deafult)
-possition = top-center,
+possition = 'top-left',
+possition = 'top-right', (deafult)
+possition = 'top-center',
 ```
 
 ---
