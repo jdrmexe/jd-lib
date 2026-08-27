@@ -16,8 +16,6 @@ files {
     'modules/notify/html/index.html',
     'modules/notify/html/style.css',
     'modules/notify/html/app.js',
-    'modules/notify-menu/noti-menu.css',
-    'modules/notify-menu/noti-menu.js',
 }
 
 server_scripts {
@@ -31,7 +29,6 @@ shared_scripts {
 
 client_scripts {
     'modules/notify/client.lua',
-    'modules/notify-menu/client.lua',
     'addons/joinserver-event/*.lua',
     'client/main.lua',
     'addons/*.lua',

@@ -59,11 +59,32 @@ function notify({ title, description, type, duration, position }) {
     setTimeout(() => dismiss(toast), duration)
 }
 
-// ── Dismiss with exit animation ───────────────────────────────
+// ── Dismiss with exit animation (FIXED: Added timeout fallback) ───
 function dismiss(toast) {
     if (toast.classList.contains('leaving')) return
     toast.classList.add('leaving')
-    toast.addEventListener('animationend', () => toast.remove(), { once: true })
+    
+    let removed = false
+    
+    // Primary: Remove when animation ends
+    const removeToast = () => {
+        if (!removed) {
+            removed = true
+            toast.removeEventListener('animationend', removeToast)
+            try {
+                toast.remove()
+            } catch (e) {
+                // In case element was already removed
+                console.debug('Toast already removed:', e)
+            }
+        }
+    }
+    
+    toast.addEventListener('animationend', removeToast, { once: true })
+    
+    // Fallback: Guarantee removal after animation duration + buffer
+    // (jdOut animation: 0.26s, buffer for safety = 350ms total)
+    setTimeout(removeToast, 350)
 }
 
 // ── NUI message listener ──────────────────────────────────────
@@ -78,6 +99,20 @@ window.addEventListener('message', function (event) {
         position:    data.position,
     })
 })
+
+// ── Orphan Toast Cleanup (Optional: Catches edge cases) ────────
+// Runs every 10 seconds and removes any toasts stuck in 'leaving' state
+setInterval(() => {
+    document.querySelectorAll('.jd-toast.leaving').forEach(toast => {
+        if (toast.parentElement) {
+            try {
+                toast.remove()
+            } catch (e) {
+                console.debug('Failed to remove orphan toast:', e)
+            }
+        }
+    })
+}, 10000)
 
 // ── Signal Lua that the NUI is ready ─────────────────────────
 fetch(`https://${GetParentResourceName()}/ready`, {
